@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kristal SK Voleybol</title>
+<meta name="description" content="Kristal SK — Kars'ta 6–17 yaş arası çocuklar için voleybol kursu. Kafkas Üniversitesi Prof. Dr. Necati Kaya Kapalı Spor Salonu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./CSS/style.css">
+<style>
+  /* Kars kışı + kristal: buz mavisi ve derin gece laciverti, voleybol sarısı tek vurgu.
+     Yerleşim: koyu kahraman bölüm, ardından açık zeminli, ince çizgilerle ayrılmış bölümler. */
+  
+</style>
+</head>
+<body>
+
+<!-- ================= BANNER ================= -->
+<header class="site-header" id="top">
+  <div class="wrap">
+    <a href="#ana-sayfa" class="brand" aria-label="Kristal SK ana sayfa">
+      <svg viewBox="0 0 48 56" aria-hidden="true">
+        <defs>
+          <linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#BFE3F3"/><stop offset="1" stop-color="#3F8FB5"/>
+          </linearGradient>
+          <linearGradient id="lg2" x1="1" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#7FC0DD"/>
+          </linearGradient>
+        </defs>
+        <polygon points="24,2 44,15 44,41 24,54 4,41 4,15" fill="url(#lg1)"/>
+        <polygon points="24,2 44,15 24,22" fill="url(#lg2)" opacity=".9"/>
+        <polygon points="4,15 24,22 24,54 4,41" fill="#0C1828" opacity=".22"/>
+        <polygon points="24,22 44,15 44,41 24,54" fill="#0C1828" opacity=".08"/>
+        <circle cx="24" cy="31" r="9" fill="#F2A93B"/>
+        <path d="M17 26c4 1 8 4 9 10M24 22c-1 4 0 8 6 11M15.5 33c3-3 7-4 12-3" fill="none" stroke="#0C1828" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-name">KRİSTAL SK<small>Voleybol · Kars</small></span>
+    </a>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mainNav">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="mainNav" aria-label="Ana menü">
+      <a href="#ana-sayfa" class="active">Ana Sayfa</a>
+      <a href="#ekibimiz">Ekibimiz</a>
+      <a href="#hizmetlerimiz">Hizmetlerimiz</a>
+      <a href="#iletisim">İletişim</a>
+      <a href="#konum">Konum</a>
+    </nav>
+
+    <div class="socials socials-head" aria-label="Sosyal medya">
+      <a href="#" data-social="instagram" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="#" data-social="whatsapp" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7L4 20z"/><path d="M9 9.5c.3 2 2.5 4.2 4.5 4.5l1-1.2 1.8.8c-.3 1.2-1.3 1.9-2.6 1.6A7 7 0 0 1 8.3 10c-.3-1.3.4-2.3 1.6-2.6l.8 1.8L9 9.5z" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="#" data-social="youtube" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9v6l5-3-5-3z" fill="currentColor" stroke="none"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ================= ANA SAYFA ================= -->
+<section class="hero" id="ana-sayfa">
+  <canvas id="snow" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Kars'ın voleybol okulu · 6–17 yaş</span>
+      <figure class="quote">
+        <blockquote id="quoteText">“Ben sporcunun <em>zeki</em> ve <em>çevik</em> olanını severim.”</blockquote>
+        <figcaption>Mustafa Kemal Atatürk</figcaption>
+      </figure>
+      <p class="hero-lead">Kristal SK'da çocuklarımıza yalnızca voleybol oynamayı değil, sahayı okumayı, hızlı karar vermeyi ve takım olmayı öğretiyoruz. Uzman eğitmenler, planlı antrenman programı ve güvenli bir kapalı salon.</p>
+      <div class="hero-cta">
+        <a href="#iletisim" class="btn btn-primary">Ön kayıt için yazın
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#hizmetlerimiz" class="btn btn-ghost">Programı inceleyin</a>
+      </div>
+    </div>
+
+    <div class="court" aria-hidden="true">
+      <svg class="court-rings" viewBox="0 0 400 400">
+        <g class="spin"><circle cx="200" cy="200" r="190" stroke-dasharray="2 10" stroke-width="1.5"/></g>
+        <g class="spin-rev"><circle cx="200" cy="200" r="150" stroke-dasharray="60 18" stroke-width="1"/></g>
+        <circle cx="200" cy="200" r="108" stroke-width="1"/>
+      </svg>
+      <svg class="net" viewBox="0 0 300 70" preserveAspectRatio="none">
+        <defs>
+          <pattern id="mesh" width="10" height="10" patternUnits="userSpaceOnUse">
+            <path d="M10 0H0V10" fill="none" stroke="rgba(220,234,242,.28)" stroke-width="1"/>
+          </pattern>
+        </defs>
+        <rect x="0" y="6" width="300" height="46" fill="url(#mesh)"/>
+        <rect x="0" y="2" width="300" height="6" rx="2" fill="#DCEAF2"/>
+        <rect x="0" y="0" width="4" height="70" fill="#DCEAF2" opacity=".6"/>
+        <rect x="296" y="0" width="4" height="70" fill="#DCEAF2" opacity=".6"/>
+      </svg>
+      <div class="ball-shadow"></div>
+      <div class="ball-track">
+        <svg viewBox="0 0 100 100">
+          <defs>
+            <radialGradient id="ballShade" cx="35%" cy="30%" r="75%">
+              <stop offset="0" stop-color="#ffffff"/><stop offset=".65" stop-color="#E9F1F5"/><stop offset="1" stop-color="#9DB4C2"/>
+            </radialGradient>
+            <clipPath id="ballClip"><circle cx="50" cy="50" r="47"/></clipPath>
+          </defs>
+          <circle cx="50" cy="50" r="47" fill="url(#ballShade)"/>
+          <g clip-path="url(#ballClip)">
+            <path d="M50 3 C 64 28, 62 58, 36 92 L 0 100 L 0 0 Z" fill="#F2A93B" opacity=".92"/>
+            <path d="M96 40 C 66 38, 40 56, 26 96 L 100 100 Z" fill="#3F8FB5" opacity=".88"/>
+          </g>
+          <g fill="none" stroke="#0C1828" stroke-width="2.2" stroke-linecap="round" opacity=".8">
+            <path d="M50 3 C 64 28, 62 58, 36 92"/>
+            <path d="M8 28 C 34 34, 58 50, 72 91"/>
+            <path d="M96 40 C 66 38, 40 56, 26 96"/>
+          </g>
+          <circle cx="50" cy="50" r="47" fill="none" stroke="#0C1828" stroke-width="2" opacity=".35"/>
+        </svg>
+      </div>
+      <span class="court-tag tag-1"><b>6–17</b> yaş grupları</span>
+      <span class="court-tag tag-2">Kapalı salon</span>
+      <span class="court-tag tag-3"><b>Uzman</b> eğitmen kadrosu</span>
+    </div>
+  </div>
+
+  <div class="facts">
+    <div class="wrap">
+      <div class="fact"><strong>3</strong><span>yaşa göre antrenman grubu</span></div>
+      <div class="fact"><strong>2</strong><span>uzman eğitmen</span></div>
+      <div class="fact"><strong>6–17</strong><span>yaş aralığı</span></div>
+      <div class="fact"><strong>Kars</strong><span>Kafkas Üniversitesi kapalı salonu</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EKİBİMİZ ================= -->
+<section class="section" id="ekibimiz">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Ekibimiz</span>
+        <h2>Her pasın arkasında bir plan, her planın arkasında bir eğitmen.</h2>
+      </div>
+      <p>Sahada çocuklarınızla birebir ilgilenen, gelişimlerini adım adım takip eden iki eğitmenimizle tanışın. Antrenmanı oyuna, oyunu tutkuya dönüştürmenin sırrını onlardan dinleyin.</p>
+    </div>
+
+    <div class="team">
+      <article class="coach">
+        <div class="avatar" aria-hidden="true">
+          <svg viewBox="0 0 112 132"><polygon points="56,10 102,38 102,94 56,122 10,94 10,38" fill="none" stroke="rgba(127,192,221,.35)"/><polygon points="56,10 102,38 56,58" fill="rgba(127,192,221,.12)"/></svg>
+          <span>BP</span>
+        </div>
+        <div>
+          <span class="role">Eğitmen · Alanında uzman</span>
+          <h3>Büşranur PERK</h3>
+          <p>Bir çocuğun sahadaki ilk manşetiyle ilk smacı arasındaki yolu en iyi bilenlerden. Temel tekniği oyunla birleştiren antrenmanlarıyla öğrencilerin kısa sürede topa ve takıma güvenmesini sağlıyor.</p>
+          <div class="chips">
+            <span class="chip hl">Teknik gelişim</span>
+            <span class="chip">Altyapı eğitimi</span>
+            <span class="chip">Servis &amp; manşet</span>
+          </div>
+        </div>
+        <p class="coach-quote">“Doğru teknik, özgüvenin ilk adımıdır.”</p>
+      </article>
+
+      <article class="coach">
+        <div class="avatar" aria-hidden="true">
+          <svg viewBox="0 0 112 132"><polygon points="56,10 102,38 102,94 56,122 10,94 10,38" fill="none" stroke="rgba(242,169,59,.35)"/><polygon points="10,38 56,58 56,122 10,94" fill="rgba(242,169,59,.12)"/></svg>
+          <span>GE</span>
+        </div>
+        <div>
+          <span class="role">Eğitmen · Alanında uzman</span>
+          <h3>Gülperi ERBOĞA</h3>
+          <p>Sahayı bir satranç tahtası gibi okumayı öğretiyor. Hız, çeviklik ve oyun zekâsını aynı antrenmanda buluşturan yaklaşımıyla öğrencilerine topun nereye gideceğini o gitmeden önce görmeyi kazandırıyor.</p>
+          <div class="chips">
+            <span class="chip hl">Oyun zekâsı</span>
+            <span class="chip">Çeviklik &amp; atletizm</span>
+            <span class="chip">Takım taktikleri</span>
+          </div>
+        </div>
+        <p class="coach-quote">“Zeki oyuncu topu değil, oyunu takip eder.”</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HİZMETLERİMİZ ================= -->
+<section class="section" id="hizmetlerimiz">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Hizmetlerimiz</span>
+        <h2>6 ile 17 yaş arası çocuklar için planlı voleybol eğitimi.</h2>
+      </div>
+      <p>Her yaşın öğrenme hızı farklıdır. Bu yüzden öğrencilerimizi yaşlarına ve seviyelerine göre gruplara ayırıyor, profesyonel ekip desteğiyle her gruba ayrı bir antrenman programı uyguluyoruz.</p>
+    </div>
+
+    <div class="groups">
+      <div class="group" style="--bar: var(--amber)">
+        <div class="age">6–9<small>yaş</small></div>
+        <h3>Minikler</h3>
+        <p>Oyun temelli antrenmanlarla top hâkimiyeti, koordinasyon ve denge. Voleybolu sevdiren, eğlenceli ilk adımlar.</p>
+      </div>
+      <div class="group" style="--bar: var(--glacier)">
+        <div class="age">10–13<small>yaş</small></div>
+        <h3>Yıldızlar</h3>
+        <p>Manşet, parmak pas ve servis tekniklerinin sistemli öğretimi. Pozisyon bilgisi ve ilk takım oyunu deneyimi.</p>
+      </div>
+      <div class="group" style="--bar: var(--ink)">
+        <div class="age">14–17<small>yaş</small></div>
+        <h3>Gençler</h3>
+        <p>Smaç, blok ve hücum kombinasyonları. Kondisyon, taktik disiplin ve maç provası ile müsabakaya hazırlık.</p>
+      </div>
+    </div>
+
+    <div class="services">
+      <div class="service">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9.5" r="2.5"/><path d="M3 19c.6-3.3 3-5 6-5s5.4 1.7 6 5M14.5 14.6c2.8-.6 5.6.8 6.5 4.4"/></svg></div>
+        <div><h3>Profesyonel ekip desteği</h3><p>Her antrenman, alanında uzman eğitmenlerin hazırladığı dönemsel plana göre yürütülür.</p></div>
+      </div>
+      <div class="service">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></div>
+        <div><h3>Bireysel gelişim takibi</h3><p>Teknik, kondisyon ve oyun becerileri düzenli olarak ölçülür; ilerleme veliyle paylaşılır.</p></div>
+      </div>
+      <div class="service">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3L5 14h6l-1 7 8-11h-6l1-7z"/></svg></div>
+        <div><h3>Atletik performans</h3><p>Sıçrama, reaksiyon hızı ve çevikliği geliştiren, yaşa uygun kondisyon çalışmaları.</p></div>
+      </div>
+      <div class="service">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0-3.5 10.9V17h7v-3.1A6 6 0 0 0 12 3zM9.5 21h5"/></svg></div>
+        <div><h3>Oyun zekâsı ve taktik</h3><p>Rotasyon, pozisyon alma ve sahayı okuma; doğru anda doğru kararı verme alışkanlığı.</p></div>
+      </div>
+      <div class="service">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <div><h3>Güvenli ortam</h3><p>Isıtmalı kapalı salonda, sakatlık önleyici ısınma rutinleri ve kontrollü yüklenme.</p></div>
+      </div>
+      <div class="service">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z"/></svg></div>
+        <div><h3>Takım ruhu ve disiplin</h3><p>Sorumluluk, saygı ve birlikte kazanmayı öğreten, sahanın dışına da taşan değerler.</p></div>
+      </div>
+    </div>
+
+    <div class="skills" aria-label="Öğretilen temel teknikler">
+      <span>Sahada öğrenecekleri</span>
+      <span class="skill">Manşet</span>
+      <span class="skill">Parmak pas</span>
+      <span class="skill">Servis</span>
+      <span class="skill">Smaç</span>
+      <span class="skill">Blok</span>
+      <span class="skill">Savunma</span>
+      <span class="skill">Rotasyon</span>
+      <span class="skill">Oyun kurma</span>
+    </div>
+
+    <div class="venue">
+      <div>
+        <span class="eyebrow">Antrenman yeri</span>
+        <h3>Kafkas Üniversitesi Prof. Dr. Necati Kaya Kapalı Spor Salonu</h3>
+        <p>Kars'ın soğuk kış günlerinde bile antrenmanlar aksamaz. Standartlara uygun voleybol sahası ve kapalı salon ortamında eğitim veriyoruz.</p>
+      </div>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Kafkas Üniversitesi Kampüsü, Kars</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg>Kapalı ve ısıtmalı salon</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Hafta içi ve hafta sonu grupları</li>
+      </ul>
+    </div>
+
+    <div class="steps">
+      <div class="step"><h3>Tanışma</h3><p>Öğrenciyi ve beklentilerinizi dinliyor, yaşına uygun grubu birlikte belirliyoruz.</p></div>
+      <div class="step"><h3>Seviye tespiti</h3><p>İlk antrenmanlarda temel motor becerileri ve top hâkimiyetini gözlemliyoruz.</p></div>
+      <div class="step"><h3>Planlı gelişim</h3><p>Dönemsel programla teknik, atletik ve taktik beceriler adım adım gelişir.</p></div>
+      <div class="step"><h3>Sahaya çıkış</h3><p>Grup içi maçlar ve turnuva deneyimiyle öğrendiklerini oyunda uygular.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= İLETİŞİM ================= -->
+<section class="section" id="iletisim">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">İletişim</span>
+        <h2>Aklınızdaki soruyu bize yazın.</h2>
+      </div>
+      <p>Kayıt, grup saatleri, ücretler ya da deneme antrenmanı… Formu doldurduğunuzda mesajınız e-posta uygulamanızda hazır olarak açılır; tek tıkla bize gönderebilirsiniz.</p>
+    </div>
+
+    <div class="contact">
+      <div class="contact-info">
+        <div class="info-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5L12 13l8.5-6.5"/></svg></div>
+          <div><small>E-posta</small><b class="js-email">info@kristalsk.com</b><button type="button" class="copy-btn" id="copyEmail">Kopyala</button></div>
+        </div>
+        <div class="info-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+          <div><small>Adres</small><b>Kafkas Üniversitesi Prof. Dr. Necati Kaya Kapalı Spor Salonu, Kars</b></div>
+        </div>
+        <div class="info-row">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 19c.6-3.3 3-5 6-5s5.4 1.7 6 5"/><path d="M17 8v6M14 11h6"/></svg></div>
+          <div><small>Yaş aralığı</small><b>6–17 yaş, kız ve erkek grupları</b></div>
+        </div>
+      </div>
+
+      <form class="form" id="contactForm" novalidate>
+        <div class="field">
+          <label for="f-name">Ad Soyad</label>
+          <input id="f-name" name="name" type="text" autocomplete="name" required>
+          <span class="err">Lütfen adınızı yazın.</span>
+        </div>
+        <div class="field">
+          <label for="f-email">E-posta</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" required>
+          <span class="err">Geçerli bir e-posta adresi yazın.</span>
+        </div>
+        <div class="field">
+          <label for="f-phone">Telefon <span>(isteğe bağlı)</span></label>
+          <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="05xx xxx xx xx">
+        </div>
+        <div class="field">
+          <label for="f-age">Öğrencinin yaşı</label>
+          <select id="f-age" name="age">
+            <option value="">Seçiniz</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="f-subject">Konu</label>
+          <select id="f-subject" name="subject">
+            <option>Kayıt bilgisi</option>
+            <option>Grup ve antrenman saatleri</option>
+            <option>Ücretler</option>
+            <option>Deneme antrenmanı</option>
+            <option>Diğer</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="f-message">Mesajınız</label>
+          <textarea id="f-message" name="message" required placeholder="Merhaba, 11 yaşındaki kızım için kayıt hakkında bilgi almak istiyorum…"></textarea>
+          <span class="err">Lütfen mesajınızı yazın.</span>
+        </div>
+        <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+        <div class="form-foot">
+          <p>Gönder'e bastığınızda e-posta uygulamanız mesajınızla birlikte açılır.</p>
+          <button type="submit" class="btn btn-primary">Mesajı hazırla ve gönder
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l16-8-6 16-2-7-8-1z"/></svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KONUM ================= -->
+<section class="section" id="konum">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Konum</span>
+        <h2>Antrenmanlar Kafkas Üniversitesi kampüsünde.</h2>
+      </div>
+      <p>Kapalı spor salonumuz Kafkas Üniversitesi Merkez Kampüsü içinde yer alıyor. Haritadan yol tarifi alabilirsiniz.</p>
+    </div>
+
+    <div class="map-wrap">
+      <div class="map" id="map">
+        <div class="map-fallback" id="mapFallback">
+          <svg viewBox="0 0 800 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="800" height="440" fill="#E3EDF2"/>
+            <g stroke="#FFFFFF" stroke-width="14" fill="none" stroke-linecap="round">
+              <path d="M-20 310 C 180 280, 320 340, 520 250 S 760 200, 840 220"/>
+              <path d="M260 -20 C 280 120, 360 220, 340 460"/>
+              <path d="M600 -20 L 560 460"/>
+            </g>
+            <g stroke="#FFFFFF" stroke-width="6" fill="none">
+              <path d="M-20 120 L 840 160"/><path d="M120 -20 L 180 460"/><path d="M-20 400 L 840 380"/><path d="M700 -20 L 760 460"/>
+            </g>
+            <g fill="#D3E3EA">
+              <rect x="380" y="60" width="140" height="80" rx="8"/><rect x="40" y="170" width="70" height="90" rx="8"/>
+              <rect x="620" y="250" width="110" height="90" rx="8"/><rect x="200" y="350" width="120" height="60" rx="8"/>
+            </g>
+            <rect x="400" y="190" width="110" height="64" rx="10" fill="#C5DAE4"/>
+          </svg>
+          <div class="pin">
+            <span class="pulse"></span>
+            <div class="pin-dot"><i></i></div>
+            <div class="pin-label">Prof. Dr. Necati Kaya Kapalı Spor Salonu</div>
+          </div>
+        </div>
+      </div>
+      <aside class="map-side">
+        <div>
+          <h3>Kristal SK Antrenman Salonu</h3>
+          <p>Kampüs girişinden sonra spor tesisleri yönünü takip edin.</p>
+        </div>
+        <dl>
+          <div><dt>Salon</dt><dd>Prof. Dr. Necati Kaya Kapalı Spor Salonu</dd></div>
+          <div><dt>Kampüs</dt><dd>Kafkas Üniversitesi, Kars</dd></div>
+        </dl>
+        <a class="btn btn-primary" id="directions" href="https://www.google.com/maps/search/?api=1&amp;query=Kafkas+%C3%9Cniversitesi+Prof.+Dr.+Necati+Kaya+Kapal%C4%B1+Spor+Salonu+Kars" target="_blank" rel="noopener">Google Maps'te yol tarifi al
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </a>
+      </aside>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-cta">
+      <div>
+        <span class="eyebrow">Kayıt ve bilgi</span>
+        <h3>Çocuğunuzun ilk antrenmanına birlikte hazırlanalım.</h3>
+      </div>
+      <div class="foot-cta-actions">
+        <a href="#iletisim" class="btn btn-primary">Bize yazın
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Kafkas+%C3%9Cniversitesi+Prof.+Dr.+Necati+Kaya+Kapal%C4%B1+Spor+Salonu+Kars" target="_blank" rel="noopener" class="btn btn-ghost">Yol tarifi al</a>
+      </div>
+    </div>
+
+    <div class="foot-grid">
+      <div class="foot-about">
+        <a href="#ana-sayfa" class="brand" aria-label="Kristal SK">
+          <svg viewBox="0 0 48 56" aria-hidden="true" style="width:34px;height:40px">
+            <polygon points="24,2 44,15 44,41 24,54 4,41 4,15" fill="url(#lg1)"/>
+            <polygon points="24,2 44,15 24,22" fill="url(#lg2)" opacity=".9"/>
+            <polygon points="4,15 24,22 24,54 4,41" fill="#0C1828" opacity=".22"/>
+            <circle cx="24" cy="31" r="9" fill="#F2A93B"/>
+            <path d="M17 26c4 1 8 4 9 10M24 22c-1 4 0 8 6 11M15.5 33c3-3 7-4 12-3" fill="none" stroke="#0C1828" stroke-width="1.4" stroke-linecap="round"/>
+          </svg>
+          <span class="brand-name">KRİSTAL SK<small>Voleybol · Kars</small></span>
+        </a>
+        <p>Kars'ta 6–17 yaş arası çocuklar için uzman eğitmenler eşliğinde voleybol eğitimi.</p>
+        <div class="socials" aria-label="Sosyal medya">
+          <a href="#" data-social="instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" data-social="whatsapp" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7L4 20z"/></svg></a>
+          <a href="#" data-social="youtube" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="5.5" width="19" height="13" rx="4"/><path d="M10 9v6l5-3-5-3z" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-links">
+        <h4>Sayfalar</h4>
+        <ul>
+          <li><a href="#ana-sayfa">Ana Sayfa</a></li>
+          <li><a href="#ekibimiz">Ekibimiz</a></li>
+          <li><a href="#hizmetlerimiz">Hizmetlerimiz</a></li>
+          <li><a href="#iletisim">İletişim</a></li>
+          <li><a href="#konum">Konum</a></li>
+        </ul>
+      </div>
+      <div class="foot-groups">
+        <h4>Gruplar</h4>
+        <ul>
+          <li><b>Minikler</b><span>6–9 yaş</span></li>
+          <li><b>Yıldızlar</b><span>10–13 yaş</span></li>
+          <li><b>Gençler</b><span>14–17 yaş</span></li>
+        </ul>
+      </div>
+      <div class="foot-contact">
+        <h4>İletişim</h4>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5L12 13l8.5-6.5"/></svg><span class="js-email">info@kristalsk.com</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg><span>Prof. Dr. Necati Kaya Kapalı Spor Salonu, Kafkas Üniversitesi, Kars</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>Hafta içi ve hafta sonu grupları</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot-quote">
+      <svg viewBox="0 0 48 56" aria-hidden="true"><polygon points="24,2 44,15 44,41 24,54 4,41 4,15" fill="url(#lg1)"/><polygon points="24,2 44,15 24,22" fill="url(#lg2)" opacity=".9"/></svg>
+      <p>“Ben sporcunun <em>zeki</em> ve <em>çevik</em> olanını severim.”</p>
+      <span>Mustafa Kemal Atatürk</span>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> Kristal SK. Tüm hakları saklıdır.</span>
+      <a href="#ana-sayfa" class="to-top">Başa dön
+        <i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+/* ====== AYARLAR: kendi bilgilerinizle değiştirin ====== */
+<script src="./JS/script.js"></script>
+</body>
+</html>
