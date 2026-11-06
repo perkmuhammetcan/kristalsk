@@ -1,12 +1,12 @@
 /* ====== AYARLAR: kendi bilgilerinizle değiştirin ====== */
 const CONFIG = {
   // WhatsApp numarası: ülke koduyla, boşluksuz ve + olmadan yazın. Örn. 905321234567
-  whatsapp: "905526262536",
+  whatsapp: "#",
   social: {
     instagram: "#",   // örn. https://www.instagram.com/kristalsk
     youtube: "#"      // örn. https://www.youtube.com/@kristalsk
   },
-  mapQuery: "Kafkas Üniversitesi Prof. Dr. Necati Kaya Kapalı Spor Salonu, Kars"
+  mapQuery: "Kafkas Üniversitesi Prof. Dr. Necati Kaya Spor Salonu, Kars"
 };
 
 (function () {
