@@ -3,7 +3,7 @@ const CONFIG = {
   // WhatsApp numarası: ülke koduyla, boşluksuz ve + olmadan yazın. Örn. 905321234567
   whatsapp: "905526262536",
   social: {
-    instagram: "#",   // örn. https://www.instagram.com/kristalsk
+    instagram: "https://www.instagram.com/kristal_36sk/",   // örn. https://www.instagram.com/kristalsk
     youtube: "#"      // örn. https://www.youtube.com/@kristalsk
   },
   mapQuery: "Kafkas Üniversitesi Prof. Dr. Necati Kaya Spor Salonu, Kars"
