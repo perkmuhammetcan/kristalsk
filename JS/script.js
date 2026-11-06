@@ -1,7 +1,7 @@
 /* ====== AYARLAR: kendi bilgilerinizle değiştirin ====== */
 const CONFIG = {
   // WhatsApp numarası: ülke koduyla, boşluksuz ve + olmadan yazın. Örn. 905321234567
-  whatsapp: "+90526262536",
+  whatsapp: "905526262536",
   social: {
     instagram: "#",   // örn. https://www.instagram.com/kristalsk
     youtube: "#"      // örn. https://www.youtube.com/@kristalsk
@@ -19,7 +19,7 @@ const CONFIG = {
   const waPretty = (() => {
     const m = waDigits.match(/^90(\d{3})(\d{3})(\d{2})(\d{2})$/);
     if (m) return "+90 " + m[1] + " " + m[2] + " " + m[3] + " " + m[4];
-    return waReady ? "+" + waDigits : "+90 5XX XXX XX XX";
+    return waReady ? "+" + waDigits : "+90 552 626 25 36";
   })();
   CONFIG.social.whatsapp = waReady ? waUrl("Merhaba, Kristal SK voleybol kursu hakkında bilgi almak istiyorum.") : "#";
   document.querySelectorAll(".js-wa-number").forEach(el => el.textContent = waPretty);
