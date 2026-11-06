@@ -1,8 +1,9 @@
+/* ====== AYARLAR: kendi bilgilerinizle değiştirin ====== */
 const CONFIG = {
-  email: "info@kristalsk.com",
+  // WhatsApp numarası: ülke koduyla, boşluksuz ve + olmadan yazın. Örn. 905321234567
+  whatsapp: "905526262536",
   social: {
     instagram: "#",   // örn. https://www.instagram.com/kristalsk
-    whatsapp: "#",    // örn. https://wa.me/905xxxxxxxxx
     youtube: "#"      // örn. https://www.youtube.com/@kristalsk
   },
   mapQuery: "Kafkas Üniversitesi Prof. Dr. Necati Kaya Kapalı Spor Salonu, Kars"
@@ -11,8 +12,21 @@ const CONFIG = {
 (function () {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // E-posta ve sosyal bağlantılar
-  document.querySelectorAll(".js-email").forEach(el => el.textContent = CONFIG.email);
+  // WhatsApp ve sosyal bağlantılar
+  const waDigits = String(CONFIG.whatsapp).replace(/\D/g, "");
+  const waReady = waDigits.length >= 11;
+  const waUrl = text => "https://wa.me/" + waDigits + (text ? "?text=" + encodeURIComponent(text) : "");
+  const waPretty = (() => {
+    const m = waDigits.match(/^90(\d{3})(\d{3})(\d{2})(\d{2})$/);
+    if (m) return "+90 " + m[1] + " " + m[2] + " " + m[3] + " " + m[4];
+    return waReady ? "+" + waDigits : "+90 5XX XXX XX XX";
+  })();
+  CONFIG.social.whatsapp = waReady ? waUrl("Merhaba, Kristal SK voleybol kursu hakkında bilgi almak istiyorum.") : "#";
+  document.querySelectorAll(".js-wa-number").forEach(el => el.textContent = waPretty);
+  document.querySelectorAll(".js-wa-link").forEach(a => {
+    if (waReady) a.href = CONFIG.social.whatsapp;
+    else a.addEventListener("click", e => e.preventDefault());
+  });
   document.querySelectorAll("[data-social]").forEach(a => {
     const url = CONFIG.social[a.dataset.social];
     if (url && url !== "#") { a.href = url; a.target = "_blank"; a.rel = "noopener"; }
@@ -150,15 +164,7 @@ const CONFIG = {
   const ageSel = document.getElementById("f-age");
   for (let a = 6; a <= 17; a++) { const o = document.createElement("option"); o.value = a; o.textContent = a + " yaş"; ageSel.appendChild(o); }
 
-  // E-postayı kopyala
-  async function copy(text, btn) {
-    try { await navigator.clipboard.writeText(text); btn.textContent = "Kopyalandı"; }
-    catch (e) { btn.textContent = "Kopyalanamadı"; }
-    setTimeout(() => btn.textContent = "Kopyala", 1800);
-  }
-  document.getElementById("copyEmail").addEventListener("click", e => copy(CONFIG.email, e.currentTarget));
-
-  // İletişim formu → e-posta uygulaması
+  // İletişim formu → WhatsApp
   const form = document.getElementById("contactForm");
   const status = document.getElementById("formStatus");
   form.addEventListener("submit", e => {
@@ -166,7 +172,6 @@ const CONFIG = {
     const get = id => document.getElementById(id);
     const checks = [
       ["f-name", v => v.trim().length > 1],
-      ["f-email", v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim())],
       ["f-message", v => v.trim().length > 3]
     ];
     let ok = true, firstBad = null;
@@ -178,27 +183,35 @@ const CONFIG = {
     if (!ok) { firstBad.focus(); return; }
 
     const name = get("f-name").value.trim();
-    const subject = "Kristal SK – " + get("f-subject").value + " (" + name + ")";
-    const lines = [
-      get("f-message").value.trim(), "",
-      "—",
-      "Ad Soyad: " + name,
-      "E-posta: " + get("f-email").value.trim(),
-      get("f-phone").value.trim() ? "Telefon: " + get("f-phone").value.trim() : "",
-      get("f-age").value ? "Öğrencinin yaşı: " + get("f-age").value : ""
-    ].filter((l, i) => l !== "" || i === 1);
-    const href = "mailto:" + CONFIG.email + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\n"));
+    const age = get("f-age").value;
+    const text = [
+      "Merhaba Kristal SK,",
+      "",
+      "*Konu:* " + get("f-subject").value,
+      "*Ad Soyad:* " + name,
+      age ? "*Öğrencinin yaşı:* " + age : "",
+      "",
+      get("f-message").value.trim()
+    ].filter((l, i, arr) => l !== "" || (arr[i - 1] !== "" && i > 0)).join("\n");
 
     status.innerHTML = "";
-    const p = document.createElement("span");
-    p.textContent = "Mesajınız e-posta uygulamanızda açılıyor. Açılmazsa mesajınızı " + CONFIG.email + " adresine gönderebilirsiniz. ";
-    const b = document.createElement("button");
-    b.type = "button"; b.className = "copy-btn"; b.textContent = "Mesajı kopyala";
-    b.addEventListener("click", () => copy("Konu: " + subject + "\n\n" + lines.join("\n"), b));
-    status.append(p, b);
     status.classList.add("show");
+    if (!waReady) {
+      status.textContent = "WhatsApp numarası henüz eklenmedi. Lütfen daha sonra tekrar deneyin.";
+      return;
+    }
+    const url = waUrl(text);
+    const p = document.createElement("div");
+    p.textContent = "WhatsApp mesajınızla birlikte açılıyor. Açılmadıysa aşağıdaki butona dokunun, ardından WhatsApp'ta gönder tuşuna basın.";
+    const a = document.createElement("a");
+    a.className = "btn btn-wa"; a.href = url; a.target = "_blank"; a.rel = "noopener";
+    a.textContent = "WhatsApp'ı aç";
+    status.append(p, a);
 
-    try { window.location.href = href; } catch (err) { /* e-posta uygulaması açılamadı */ }
+    try {
+      const w = window.open(url, "_blank");
+      if (w) w.opener = null;
+    } catch (err) { /* açılamazsa yukarıdaki buton kullanılır */ }
   });
   form.querySelectorAll("input, textarea").forEach(el => el.addEventListener("input", () => el.closest(".field").classList.remove("invalid")));
 })();

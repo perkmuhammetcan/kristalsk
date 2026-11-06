@@ -1,4 +1,6 @@
-:root {
+ /* Kars kışı + kristal: buz mavisi ve derin gece laciverti, voleybol sarısı tek vurgu.
+     Yerleşim: koyu kahraman bölüm, ardından açık zeminli, ince çizgilerle ayrılmış bölümler. */
+  :root {
     --ink: #0C1828;
     --ink-2: #14253A;
     --paper: #F4F8FA;
@@ -10,6 +12,8 @@
     --muted: #586A7C;
     --line: #D3DFE7;
     --card: #FFFFFF;
+    --wa: #1FA855;
+    --wa-dark: #178A45;
 
     --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
     --font-body: "Manrope", "Segoe UI", system-ui, sans-serif;
@@ -275,6 +279,22 @@
   .form-foot p { font-size: 13px; color: var(--muted); max-width: 40ch; }
   .form .btn-primary { background: var(--ink); color: #fff; }
   .form .btn-primary:hover { background: var(--ink-2); }
+  .btn-wa { background: var(--wa); color: #fff; }
+  .btn-wa:hover { background: var(--wa-dark); }
+  .btn-wa svg { width: 18px; height: 18px; }
+  .form-status a.btn { margin-top: 12px; }
+
+  .wa-float {
+    position: fixed; right: 20px; bottom: 20px; z-index: 60; width: 56px; height: 56px; border-radius: 50%;
+    display: grid; place-items: center; background: var(--wa); color: #fff; text-decoration: none;
+    box-shadow: 0 14px 30px -10px rgba(12, 24, 40, 0.55); transition: transform .2s, background .2s;
+  }
+  .wa-float:hover { transform: translateY(-3px) scale(1.04); background: var(--wa-dark); }
+  .wa-float svg { width: 28px; height: 28px; }
+  .wa-float::before {
+    content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid var(--wa);
+    animation: pulse 2.4s ease-out infinite; pointer-events: none;
+  }
   .form-status { grid-column: 1 / -1; display: none; padding: 14px 16px; border-radius: 10px; background: var(--ice); color: var(--ink-2); font-size: 14.5px; }
   .form-status.show { display: block; }
 
