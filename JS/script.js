@@ -1,7 +1,7 @@
 /* ====== AYARLAR: kendi bilgilerinizle değiştirin ====== */
 const CONFIG = {
   // WhatsApp numarası: ülke koduyla, boşluksuz ve + olmadan yazın. Örn. 905321234567
-  whatsapp: "#",
+  whatsapp: "+90526262536",
   social: {
     instagram: "#",   // örn. https://www.instagram.com/kristalsk
     youtube: "#"      // örn. https://www.youtube.com/@kristalsk
